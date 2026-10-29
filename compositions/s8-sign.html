@@ -1,0 +1,24 @@
+<template>
+  <style>
+    @font-face { font-family: "NotoKR"; src: url("assets/fonts/NotoSansKR-VF.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b0b0b; font-family: "NotoKR", sans-serif; color: #fff; }
+    .s8-l { position: absolute; left: 200px; font-size: 230px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; transform-origin: 0% 50%; }
+    #s8-a { top: 130px; }
+    #s8-b { top: 400px; }
+    #s8-c { top: 670px; color: #e2231a; }
+    #s8-b span { display: inline-block; }
+  </style>
+  <div id="root" data-composition-id="s8" data-width="1920" data-height="1080">
+    <div id="s8-a" class="s8-l clip" data-start="0" data-duration="3.734">RIDE BIKES</div>
+    <div id="s8-b" class="s8-l clip" data-start="0.9" data-duration="2.834"><span>H</span><span>A</span><span>V</span><span>E</span><span>&nbsp;</span><span>F</span><span>U</span><span>N</span></div>
+    <div id="s8-c" class="s8-l clip" data-start="1.8" data-duration="1.934">FEEL GOOD</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s8-a", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power2.out" }, 0.05);
+    tl.fromTo("#s8-b span", { opacity: 0.0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.1, ease: "power2.out", stagger: 0.033 }, 0.934);
+    tl.fromTo("#s8-c", { opacity: 0, scale: 1.18, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.6)" }, 1.867);
+    tl.to(["#s8-a", "#s8-b", "#s8-c"], { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in", stagger: 0.04 }, 3.45);
+    window.__timelines["s8"] = tl;
+  </script>
+</template>

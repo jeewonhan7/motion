@@ -1,0 +1,22 @@
+<template>
+  <style>
+    @font-face { font-family: "NotoKR"; src: url("assets/fonts/NotoSansKR-VF.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b0b0b; font-family: "NotoKR", sans-serif; color: #111; }
+    #s9-flood { position: absolute; inset: 0; background: #fff; clip-path: circle(0% at 960px 540px); }
+    #s9-logo { position: absolute; left: 680px; top: 440px; width: 560px; height: 67px; clip-path: inset(0 100% 0 0); }
+    #s9-tag { position: absolute; left: 0; right: 0; top: 580px; text-align: center; font-size: 56px; font-weight: 700; letter-spacing: 0.18em; }
+    #s9-tag span { display: inline-block; }
+  </style>
+  <div id="root" data-composition-id="s9" data-width="1920" data-height="1080">
+    <div id="s9-flood" class="clip" data-start="0" data-duration="5.633"></div>
+    <img id="s9-logo" class="clip" data-start="1.8" data-duration="3.833" src="assets/trek-logo.svg" alt="TREK" data-var-src="logo" />
+    <div id="s9-tag" class="clip" data-start="2.5" data-duration="3.133"><span>B</span><span>I</span><span>K</span><span>E</span><span>S</span><span>&nbsp;</span><span>·</span><span>&nbsp;</span><span>S</span><span>E</span><span>R</span><span>V</span><span>I</span><span>C</span><span>E</span><span>&nbsp;</span><span>·</span><span>&nbsp;</span><span>G</span><span>E</span><span>A</span><span>R</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s9-flood", { clipPath: "circle(0% at 960px 540px)" }, { clipPath: "circle(120% at 960px 540px)", duration: 0.45, ease: "power2.inOut" }, 0);
+    tl.fromTo("#s9-logo", { clipPath: "inset(0 100% 0 0)", x: -40 }, { clipPath: "inset(0 0% 0 0)", x: 0, duration: 0.5, ease: "power3.out" }, 1.9);
+    tl.fromTo("#s9-tag span", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none", stagger: 0.033 }, 2.6);
+    window.__timelines["s9"] = tl;
+  </script>
+</template>

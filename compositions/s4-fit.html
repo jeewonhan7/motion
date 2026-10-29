@@ -1,0 +1,30 @@
+<template>
+  <style>
+    @font-face { font-family: "NotoKR"; src: url("assets/fonts/NotoSansKR-VF.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #fff; font-family: "NotoKR", sans-serif; color: #111; }
+    .s4-small { position: absolute; left: 160px; font-size: 120px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+    #s4-a { top: 150px; }
+    #s4-b { top: 300px; }
+    #s4-rule { position: absolute; left: 160px; top: 520px; width: 1600px; height: 34px; transform-origin: 0% 50%;
+      border-top: 4px solid #111;
+      background: repeating-linear-gradient(90deg, #111 0 3px, transparent 3px 40px) top left / 100% 22px no-repeat; }
+    #s4-big { position: absolute; left: 150px; top: 590px; font-size: 300px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: #e2231a; transform-origin: 0% 50%; }
+    #s4-flood { position: absolute; inset: 0; background: #e2231a; clip-path: circle(0% at 330px 740px); }
+  </style>
+  <div id="root" data-composition-id="s4" data-width="1920" data-height="1080">
+    <div id="s4-a" class="s4-small clip" data-start="0" data-duration="3.767">키에 맞춰</div>
+    <div id="s4-b" class="s4-small clip" data-start="0.9" data-duration="2.867">몸에 맞춰</div>
+    <div id="s4-rule" class="clip" data-start="1.35" data-duration="2.417"></div>
+    <div id="s4-big" class="clip" data-start="1.8" data-duration="1.967" data-var-text="fit-word">딱 맞게</div>
+    <div id="s4-flood" class="clip" data-start="3.2" data-duration="0.567"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s4-a", { y: -160, opacity: 0, filter: "blur(10px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.35, ease: "expo.out" }, 0);
+    tl.fromTo("#s4-b", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power2.out" }, 0.933);
+    tl.fromTo("#s4-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 1.4);
+    tl.fromTo("#s4-big", { opacity: 0, scale: 1.18, filter: "blur(10px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.28, ease: "back.out(1.6)" }, 1.867);
+    tl.fromTo("#s4-flood", { clipPath: "circle(0% at 330px 740px)" }, { clipPath: "circle(150% at 330px 740px)", duration: 0.45, ease: "power2.inOut" }, 3.267);
+    window.__timelines["s4"] = tl;
+  </script>
+</template>

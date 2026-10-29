@@ -1,0 +1,21 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0b0b0b; }
+    #s7-cam { position: absolute; inset: 0; transform-origin: 1112px 286px; }
+    #s7-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+    #s7-dark { position: absolute; inset: 0; background: #0b0b0b; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="s7" data-width="1920" data-height="1080">
+    <div id="s7-cam" class="clip" data-start="0" data-duration="1.866">
+      <img id="s7-photo" src="assets/store.webp" alt="" />
+    </div>
+    <div id="s7-dark" class="clip" data-start="0" data-duration="1.866"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s7-photo", { scale: 1.25 }, { scale: 1, duration: 1.3, ease: "power2.out" }, 0);
+    tl.fromTo("#s7-cam", { scale: 1 }, { scale: 3.4, duration: 0.45, ease: "power3.in" }, 1.416);
+    tl.fromTo("#s7-dark", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.in" }, 1.66);
+    window.__timelines["s7"] = tl;
+  </script>
+</template>
