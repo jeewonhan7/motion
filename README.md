@@ -21,4 +21,5 @@ Node.js 22 이상과 FFmpeg가 필요합니다.
 - 트렉 로고: Wikimedia Commons `2018 Trek logo word mark black.svg`
 - 서체: Noto Sans KR (SIL Open Font License)
 - 효과음: Pixabay Content License (HyperFrames media-use 번들)
-- 배경음악: 없음
+- 배경음악: Adventures by A Himitsu (CC BY 3.0), 원곡 115.95 BPM을 128 BPM으로 음정 유지 가속
+- 웹페이지: `docs/` (GitHub Pages, https://jeewonhan7.github.io/motion/)

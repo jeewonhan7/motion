@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>트렉 환대 영상</title>
+  <meta name="description" content="트렉 매장에서 손님을 맞이하는 30초 키네틱 타이포그래피 모션 그래픽" />
+  <style>
+    :root { --bg: #ffffff; --ink: #111111; --muted: #6b6b6b; --line: #e6e6e6; --accent: #e2231a; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0b0b0b; --ink: #f4f4f4; --muted: #9a9a9a; --line: #262626; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; line-height: 1.6; }
+    main { max-width: 1080px; margin: 0 auto; padding: 56px 16px 72px; }
+    h1 { font-size: clamp(36px, 7vw, 72px); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .lede { margin-top: 16px; font-size: 18px; color: var(--muted); max-width: 640px; }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; margin-top: 40px; background: #000; border-radius: 6px; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .meta a { color: var(--ink); }
+    h2 { margin-top: 56px; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+    ol { margin-top: 16px; padding-left: 0; list-style: none; border-top: 1px solid var(--line); }
+    li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    li span { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .credits { margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .credits p + p { margin-top: 4px; }
+    .credits a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>어서 오세요,<br /><em>라이더</em></h1>
+    <p class="lede">트렉 매장 문을 연 순간부터 자전거를 끌고 나갈 때까지, 직원이 건네는 말을 박자에 맞춘 큰 글자로 보여 주는 30초 키네틱 타이포그래피 영상입니다.</p>
+
+    <video src="trek-welcome.mp4" controls playsinline preload="metadata" poster="poster.jpg"></video>
+    <div class="meta">
+      <span>30초 · 1920×1080 · 30fps</span>
+      <a href="trek-welcome.mp4" download>MP4 내려받기</a>
+      <a href="https://github.com/jeewonhan7/motion">소스 코드</a>
+    </div>
+
+    <h2>장면 구성</h2>
+    <ol>
+      <li><span>0:00</span>밤의 매장 정면, 유리문 안으로 들어간다</li>
+      <li><span>0:01</span>어서 오세요</li>
+      <li><span>0:04</span>어떤 길을 달리세요? 단어가 돌다가 "주말 산길"에 멈춘다</li>
+      <li><span>0:08</span>키에 맞춰, 몸에 맞춰, 딱 맞게</li>
+      <li><span>0:11</span>바퀴가 굴러 들어온다. 한 바퀴 타 보세요</li>
+      <li><span>0:15</span>오늘부터 내 자전거. 글자 속 매장이 화면 전체로 열린다</li>
+      <li><span>0:21</span>RIDE BIKES · HAVE FUN · FEEL GOOD</li>
+      <li><span>0:24</span>TREK · BIKES · SERVICE · GEAR</li>
+    </ol>
+
+    <h2>출처</h2>
+    <div class="credits">
+      <p>음악: Adventures by A Himitsu, CC BY 3.0</p>
+      <p>로고: Trek Bicycle Corporation 워드마크 (Wikimedia Commons)</p>
+      <p>서체: Noto Sans KR (SIL Open Font License) · 효과음: Pixabay Content License</p>
+      <p>제작: <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a></p>
+    </div>
+  </main>
+</body>
+</html>
